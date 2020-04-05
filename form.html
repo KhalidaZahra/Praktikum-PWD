@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulir Mahasiswa</title>
+</head>
+<body>
+	<h1 align="center">FORMULIR MAHASISWA</h1>
+	<form action="/action_page.php">
+		<div align="left" style="border: 10px solid lightseagreen "><br>
+		<div align="center"><label for="form"><b>DATA MAHASISWA</b></label></div>
+
+		<div align="left"><label for="name"><b> Nama </b>:</label>
+		<input type="text" id="name" size="40"></div>
+		<br>
+
+		<div><label for="NIM"><b>NIM</b>: </label>
+		<input type="text" id="NIM"></div>
+		<br>
+
+		<div><label for="ttl"><b> Tempat, tanggal, lahir </b>: </label>
+		<input type="date" id="ttl"></div>
+		<br>
+		
+		<div><label for="almtname"><b> Alamat </b>: </label>
+		<input type="text" id="almtname"></div>
+		<br>
+
+		<div><label for="telpname"><b> Telp </b>: </label>
+		<input type="text" id="telpname"></div>
+		<br>
+
+		<div><label for="jenis kelamin"><b>Jenis Kelamin </b>: </label>
+		<input type="radio" id="Laki laki" name="Jenis kelamin" value="Laki laki">
+		<label for="laki laki"> Laki laki</label>
+		<input type="radio" id="Perempuan" name="Jenis kelamin" value="Perempuan">
+		<label for="Perempuan"> Perempuan</label></div>
+		<br>
+
+		<div><label for="agama"><b>Agama </b>: </label>
+		<select id="agama" name="agama">
+			<option value="Islam">Islam</option>
+			<option value="Kristen">Kristen</option>
+			<option value="Hindu">Hindu</option>
+			<option value="Budha">Budha</option>
+			<option value="konghucu">konghucu</option>
+		</select></div>
+		<br>
+
+		<div><label for="fakultas"><b> Fakultas </b>:</label>
+		<select id="fakultas" name="fakultas">
+			<option value="FAI">Fakultas Agama Islam</option>
+			<option value="FKM">Fakultas Kesehatan Masyarakat</option>
+			<option value="FEB">Fakultas Ekonomi Budaya</option>
+			<option value="FAST">Fakultas sains dan Teknologi terapan</option>
+			<option value="FFar">Fakultas Farmasi</option>
+			<option value="FSBK">Fakultas Sastra Budaya dan Komunikasi</option>
+			<option value="FKIP">Fakultas Keguruan dan Ilmu Pendidikan</option>
+			<option value="FTI">Fakultas Teknik Industri</option>
+			<option value="FK">Fakultas Kedokteran</option>
+			<option value="FH">Fakultas Hukum</option>
+			<option value="FPsi">Fakultas Psikologi</option>
+		</select></div>
+		<br>
+
+		<div><label for="jurusan"><b> Jurusan </b>: </label>
+		<input type="text" id="Jurusan"></div>
+		<br>
+		<div><label for="file"><b>Upload File photo	:</b><input type="file"></button></label></div>
+		<br>
+			<b>Data yang saya isi sudah benar</b><input type="checkbox" required>
+			<br>
+			<br><button type="reset">Kembali</button>
+			<button type="submit">Ya</button>
+
+		<div align="center">
+		<button type="simpan" value="simpan">Simpan permanen</button>
+		<button type="batal" value="batal"> batal</button></div>
+		</div>
+
+	</form>
+
+</body>
+</html>
