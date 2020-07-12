@@ -88,7 +88,7 @@
 		}else {
 			fputs($fp, "$nama|$nim|$tl|$alamat|$nop|$email|$jk|$goldar|$agama|$fakultas|$jurusan|$nama_ortu|$ttl_ortu|$alamat_ortu|$pekerjaan_ortu|$nohp_ortu\n");
 			fclose($fp);
-			echo "<div id='form'>Pendaftaran Berhasil<br>";
+			echo "<div id='form'>Pengisian Berhasil<br>";
 			echo "<a style='color:black;border-radius:2px;font-weight:bold;' href='tabel.php'>Klik Disini Untuk Melihat Data</a></div>";
 		}
 }
