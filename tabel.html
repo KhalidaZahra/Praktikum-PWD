@@ -1,101 +1,164 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tabel</title>
-</head>
-<body>
-	<table border="1">
-		<caption>TABEL ISIAN IDENTITAS MAHASISWA</caption>
-		<thead style="background: olive ; color: white">
-			<tr>
-				<td rowspan="2">No</td>
-				<th rowspan="2">nama</td>
-				<th rowspan="2">jenis kelamin</td>
-				<td colspan="7" align="center">Data Lengkap</td>
-			<tr>
-				<td align="center">NIM</td>
-				<td align="center">Tempat tanggal Lahir</td>
-				<td align="center">Alamat</td>
-				<td align="center">Telp</td>
-				<td align="center">Agama</td>
-				<td align="center">Fakultas</td>
-				<td align="center">Jurusan</td>
-			</tr>
+<style type="text/css">
+body {
+	width: 100wh;
+	height: 90vh;
+	color: black;
+	background: linear-gradient(-45deg, #7CFC00, #00FF00, #EE7752, #E73C7E, #23A6D5, #23D5AB, #FFFF00);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+ 
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+ 
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+ 
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+  	table {
+  		margin: 0px auto;
+  		border-collapse: collapse;
+  	}
 
-		</thead>
-		<tbody style="background-color: khaki">
-			<tr>
-				<td>1.</td>
-				<td>Khalida Zahra</td>
-				<td>Perempuan</td>
-				<td>1900018007</td>
-				<td>Majalengka, 7 Juni 2001</td>
-				<td>Jatitujuh Majalengka</td>
-				<td>089980761617</td>
-				<td>Islam</td>
-				<td>Fakultas Teknologi Industri</td>
-				<td>Teknik Informatika</td>
-			</tr>
-			<tr>
-				<td>2.</td>
-				<td>Wafa Fauziah</td>
-				<td>Perempuan</td>
-				<td>1900012025</td>
-				<td>Majalengka, 25 Desember 2000</td>
-				<td>Talaga Majalengka</td>
-				<td>081234567890</td>
-				<td>Islam</td>
-				<td>Fakultas Kedoteran</td>
-				<td>Kedokteran</td>
-			</tr>
-			<tr>
-				<td>3.</td>
-				<td>Roisah Ummah</td>
-				<td>Perempuan</td>
-				<td>1800018232</td>
-				<td>Lamongan, 20 september 1999</td>
-				<td>Lamongan Jawa Timur</td>
-				<td>087654378124</td>
-				<td>Islam</td>
-				<td>Fakultas Agama Islam</td>
-				<td>Ilmu Hadist</td>
-			</tr>
-			<tr>
-				<td>4.</td>
-				<td>Amira Mufida Zharfa</td>
-				<td>Perempuan</td>
-				<td>1900024134</td>
-				<td>Yogyakarta, 10 Desember 2001</td>
-				<td>Sleman Yogyakarta</td>
-				<td>082568901786</td>
-				<td>Islam</td>
-				<td>Fakultas Sains dan Ilmu Terapan</td>
-				<td>Biologi</td>
-			</tr>
-			<tr>
-				<td>5.</td>
-				<td>Fikri Imanullah Fauzi</td>
-				<td>Laki-laki</td>
-				<td>1900016030</td>
-				<td>Bandung, 30 september 2000</td>
-				<td>Bandung Jawa Barat</td>
-				<td>081994386551</td>
-				<td>Islam</td>
-				<td>Fakultas Keperguruan dan Ilmu Pendidikan</td>
-				<td>Pendidikan Fisika</td>
-			</tr>
-			<tr>
-				<td><br></td>
-			</tr>
-			<tr>
-				<td colspan="2">jumlah Perempuan</td>
-				<td>:	4</td>
-			</tr>
-			<tr>
-				<td colspan="2">jumlah laki-laki</td>
-				<td>:	1</td>
-			</tr>
-		</tbody>
-	</table>
-</body>
-</html>
+  	table tr td {
+		width: 350px;
+		border:1px solid; padding: 3px;
+		width: 250px;
+  	}
+
+  	#table {
+  		text-align: center;
+  		text-decoration: none;
+  	}
+
+  	#footer {
+  		width: 500px;
+        padding: 10px;
+        border: 1px solid black;
+        background: transparent;
+        margin: 0 auto;
+        text-align: center;
+  	}
+
+</style>
+
+<?php
+	
+	$file = "data_mhs.txt";
+	$fp = fopen($file, "a+");
+
+	//tampilkan
+
+	echo "<div id='table'><h2>BIODATA MAHASISWA</h2>";
+
+	while($data = fgets($fp,10000)) {
+		$pisah = explode("|", $data);
+
+		echo "<table>";
+		echo "<tr>
+				<td class='table1'>Nama</td>
+				<td> $pisah[0]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>NIM</td>
+				<td> $pisah[1]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Tanggal Lahir</td>
+				<td> $pisah[2]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Alamat</td>
+				<td> $pisah[3]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>NO HP</td>
+				<td> $pisah[4]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Email</td>
+				<td> $pisah[5]</td>
+			  </tr>";	  
+		echo "<tr>
+				<td class='table1'>Jenis Kelamin</td>
+				<td> $pisah[6]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Golongan Darah</td>
+				<td> $pisah[7]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Agama</td>
+				<td> $pisah[8]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>Fakultas</td>
+				<td> $pisah[9]</td>
+			  </tr>";	
+		echo "<tr>
+				<td class='table1'>Jurusan</td>
+				<td> $pisah[10]</td>
+			  </tr>";		  	  	  
+
+		echo "<tr>
+				<td class='table1'>nama orangtua</td>
+				<td> $pisah[11]</td>
+			  </tr>";	
+		echo "<tr>
+				<td class='table1'>Tanggal lahir orangtua</td>
+				<td> $pisah[12]</td>
+			  </tr>";
+		echo "<tr>
+				<td class='table1'>alamat orangtua</td>
+				<td> $pisah[13]</td>
+			  </tr>";	
+		echo "<tr>
+				<td class='table1'>pekerjaan orangtua</td>
+				<td> $pisah[14]</td>
+			  </tr>";	
+		echo "<tr>
+				<td class='table1'>nomor hp orang tua</td>
+				<td> $pisah[15]</td>
+			  </tr>";	
+		echo "</table><br></div>";
+
+	}
+
+	echo "<div id='footer'>
+		<a style='color:black;border-radius:2px;font-weight:bold;' href='hapus.php'>Hapus Semua Data</a>
+	</div>";
+	echo "<div id='footer'>
+		<a style='color:black;border-radius:2px;font-weight:bold;' href='form.html'>Kembali Ke Formulir</a>
+	</div>";
+
+?>
