@@ -13,5 +13,5 @@ while ($isi = fgets($fp)){
 <tr><td>&nbsp;<hr></td><td>&nbsp;<hr></td></tr>";
 }
 echo "</table>";
-echo "<a href=bukutamu.php> Klik Disini </a>Isi Form Buku Tamu";
+echo "<a href=index.html> Klik Disini </a>Isi Form Buku Tamu";
 ?>
